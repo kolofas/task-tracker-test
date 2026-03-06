@@ -26,11 +26,12 @@ REST API сервис для управления задачами внутри 
 ```text
 app/
   api/            HTTP endpoints
+  core/           настройки приложения
   services/       бизнес-логика
   repositories/   слой работы с БД
   models/         SQLAlchemy модели
   schemas/        Pydantic схемы
-  db/             engine и session
+  db.py           engine и session
   main.py         точка входа FastAPI
 ```
 
