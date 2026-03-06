@@ -87,18 +87,22 @@ in_progress → cancelled
 git clone https://github.com/kolofas/task-tracker-test.git
 cd task-tracker-test
 ```
+2. Создать .env file
+
+```
+cp .env.example .env
+```
 
 
-
-2. Запустить контейнеры
+3. Запустить контейнеры
 ```
 docker compose up --build -d
 ```
-3. Применить миграции
+4. Применить миграции
 ```
 docker exec -it task-tracker-app alembic upgrade head
 ```
-4. Открыть Swagger
+5. Открыть Swagger
 
 http://localhost:8000/docs
 
