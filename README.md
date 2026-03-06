@@ -83,17 +83,20 @@ in_progress → cancelled
 
 1. Клонировать репозиторий
 
+```
 git clone https://github.com/kolofas/task-tracker-test.git 
+```
+
 cd task-tracker-test
 
 2. Запустить контейнеры
-
+```
 docker compose up --build -d
-
+```
 3. Применить миграции
-
+```
 docker exec -it task-tracker-app alembic upgrade head
-
+```
 4. Открыть Swagger
 
 http://localhost:8000/docs
@@ -101,20 +104,20 @@ http://localhost:8000/docs
 ## Seed данные
 
 После применения миграций автоматически создаются:
-
+```
 User  
 id = 1
 
 Project  
 id = 1  
 owner_id = 1
-
+```
 Это позволяет сразу тестировать API.
 
 ## Примеры запросов
 
 Создание задачи
-
+```
 POST /tasks/
 
 {
@@ -125,28 +128,28 @@ POST /tasks/
   "author_id": 1,
   "assignee_id": 1
 }
-
+```
 Получение задачи
-
+```
 GET /tasks/{id}
-
+```
 Получение списка задач
-
+```
 GET /tasks/?limit=10&offset=0
-
+```
 Изменение статуса задачи
-
+```
 PATCH /tasks/{id}/status
 
 {
   "new_status": "in_progress",
   "changed_by": 1
 }
-
+```
 История изменений статусов
-
+```
 GET /tasks/{id}/history
-
+```
 ## Пагинация
 
 Используется offset pagination.
@@ -157,15 +160,15 @@ limit
 offset
 
 Пример:
-
+```
 GET /tasks/?limit=20&offset=40
-
+```
 ## Логи
 
 Просмотр логов контейнера:
-
+```
 docker compose logs -f app
-
+```
 ## Тестирование API
 
 API можно протестировать:
