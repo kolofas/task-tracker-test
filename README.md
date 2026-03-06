@@ -83,7 +83,7 @@ in_progress → cancelled
 
 1. Клонировать репозиторий
 
-git clone <repository_url>  
+git clone https://github.com/kolofas/task-tracker-test.git 
 cd task-tracker-test
 
 2. Запустить контейнеры
